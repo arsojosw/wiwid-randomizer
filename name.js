@@ -81,7 +81,7 @@ function create_clan_names (){
   
   
     // last = reverse(last);
-  string_names += last.toUpperCase()+" "+String(chance.character({ alpha: true })).toUpperCase()+". "+ names1+""+names2;
+  string_names += last.toUpperCase()+" "+String(chance.character({ alpha: true })).toUpperCase()+". "+ String(names1+""+names2).toUpperCase();
   return string_names;
 
 }
