@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Wiwid Randomizer</title>
+</head>
+<body>
+	<div>
+		<button id="food-btn">Random Food</button>
+		<button id="food-btn2">Random Food 2 Mixed Food</button>
+		<button id="food-btn3">Random Food 3 Mixed Food</button>
+		<div>
+			<div id="food-name"></div>	
+			<div id="food"></div>	
+		</div>
+	</div>
+	<p></p>
+	<div>
+		<button id="god-btn">Odd God</button>
+		<button id="god-btn2">Primodial God</button>
+		<button id="god-btn3">Party of Elemental Gods</button>
+		<div>
+			<div id="god"></div>	
+		</div>
+	</div>
+	<p></p>
+	<div>
+		<button id="world-btn">Random World</button>
+		<div>
+			<div id="world"></div>	
+		</div>
+	</div>
+	<p></p>
+	<div>
+		<button id="name-btn">Clan Name Generator</button>
+		<div>
+			<div id="name"></div>	
+		</div>
+	</div>
+	<script src="http://chancejs.com/chance.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="name.js?v=6"></script>
+	<script src="elements.js?v=9"></script>
+	<script src="color.js?v=1"></script>
+	<script src="food.js?v=6"></script>
+	<script src="world.js?v=11"></script>
+	
+	<script>
+	    $(function(){
+	    	
+	    	$('#food-btn').click(function(){
+	    		made_food();
+	    	})
+	    	$('#food-btn2').click(function(){
+	    		made_food(2);
+	    	})
+	    	$('#food-btn3').click(function(){
+	    		made_food(3);
+	    	})
+
+	    	$('#god-btn').click(function(){
+	    		$('#god').text(createGod("odd"));
+	    	})
+	    	$('#god-btn2').click(function(){
+	    		$('#god').text(createGod("primodial"));
+	    	})
+	    	$('#god-btn3').click(function(){
+				$('#god').html("");	
+	    		var bscElm = chance.shuffle(basicElement);
+				var first = chance.pickset(oddElement,bscElm.length);
+	    		for (var i = bscElm.length - 1; i >= 0; i--) {
+					
+	    			$('#god').append("<p>GOD of "+ bscElm[i] + " and " +first[i]+"</p>");
+	    		}
+	    		
+	    	})
+			$('#world-btn').click(function(){
+	    		$('#world').text(made_world());
+	    	})
+
+			$('#name-btn').click(function(){
+	    		$('#name').text(create_clan_names());
+	    	})
+	    })
+	    
+	</script>
+</body>
+</html>
