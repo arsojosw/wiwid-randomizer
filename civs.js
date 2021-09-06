@@ -191,7 +191,18 @@ function create_civs_random(){
 
  return str_civs;    
 }
+function create_civs_many(){
+    var str_civs ="";
+    var randomnes =chance.integer({ min: 5, max: 10 });
+    for (let index = 0; index < randomnes; index++) {
+        
+        str_civs += create_civs_random();
+        str_civs += "</br>";
 
+    }
+    
+    return str_civs;
+}
 function create_civs_spec(types){
     var str_civs ="";
     return str_civs;
