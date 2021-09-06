@@ -117,7 +117,7 @@ function create_civs_random(){
  }else if(civs1 == "Town" || civs1 == "City" || civs1 == "Fort" || civs1 == "Port" || civs1 == "Keep"){
     produce = chance.pickset(civs_produce, chance.integer({ min: 4, max: 6 }));
  }else{
-    
+    produce = chance.pickset(civs_produce, chance.integer({ min: 4, max: 6 }));
  }
  str_civs += "They produce [ ";
  for (let index = 0; index < produce.length; index++) {
