@@ -38,6 +38,13 @@
 		</div>
 		<p></p>
 		<div>
+			<button id="herbs-btn" class="button is-dark">Random Herbs</button>
+			<blockquote>
+				<div id="herbs"></div>	
+			</blockquote>
+		</div>
+		<p></p>
+		<div>
 			<button id="god-btn" class="button is-dark">Odd God</button>
 			<button id="god-btn2" class="button is-dark">Primodial God</button>
 			<button id="god-btn3" class="button is-dark">Party of Elemental Gods</button>
@@ -73,7 +80,8 @@
 	<script src="name.js?v=8"></script>
 	<script src="elements.js?v=9"></script>
 	<script src="color.js?v=1"></script>
-	<script src="food.js?v=6"></script>
+	<script src="herbs.js?v=2"></script>
+	<script src="food.js?v=8"></script>
 	<script src="world.js?v=20"></script>
 	<script src="civs.js?v=31"></script>
 	
@@ -89,6 +97,12 @@
 	    	$('#food-btn3').click(function(){
 	    		made_food(3);
 	    	})
+
+			$('#herbs-btn').click(function(){
+	    		$('#herbs').html(made_herbs());
+	    	})
+
+			
 
 	    	$('#god-btn').click(function(){
 	    		$('#god').html(createGod("odd"));

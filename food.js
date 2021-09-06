@@ -306,3 +306,27 @@ made_food = function(times){
 	$('#food-name').text(food_name);
 	$('#food').text(food_string);
 }
+
+
+function made_herbs (){
+	var herbsname_str ="";
+	var herbs_str ="";
+	var herbs_type = chance.pickone(herbsname2);
+	
+	herbsname_str = chance.pickone(herbsattribute) +" "+chance.pickone(herbsname1)+" "+herbs_type;
+
+
+	herbs_str += herbsname_str.toUpperCase();
+	herbs_str += "</br>";
+
+	herbs_str += "This "+herbs_type+" will "+chance.pickone(herbseffect)+" "+chance.pickone(herbseffectattr)+" effect if "+chance.pickone(herbsused)+". ";
+	herbs_str += "</br>";
+	herbs_str += "The duration for effect will last for "+chance.integer({ min: 1, max: 10 })+" "+chance.pickone(["Seconds", "Minute", "Hours", "Days", "Month", "Years"]);
+	herbs_str += "</br>";
+	herbs_str += "Dificulty Check (optional, only for dice related game / D&D) </br>";
+	herbs_str += "Beginner: "+chance.integer({ min: 6, max: 12 })+" (effect 50%)</br>";
+	herbs_str += "Advance: "+chance.integer({ min: 13, max: 18 })+" (effect 100%)</br>";
+	herbs_str += "Expert: "+chance.integer({ min: 19, max: 25 })+" (effect 200%)</br>";
+	herbs_str += "</br>";
+	return herbs_str;
+}
