@@ -106,7 +106,7 @@ function create_civs_random(){
  }else if(civs1 == "Town" || civs1 == "City" || civs1 == "Fort" || civs1 == "Port" || civs1 == "Keep"){
     houses = chance.integer({ min: 50, max: 100 })
  }else{
-    
+    houses = chance.integer({ min: 50, max: 100 })
  }
  str_civs += "<b>"+Number(houses * chance.integer({ min: 2, max: 4 }))+ " resident</b> lives there.</br> ";
 
