@@ -26,7 +26,12 @@
 	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 	<div class="content">
-			
+		<div>
+			<button id="dnd-npc-btn" class="button is-dark">NPC Generator</button>
+			<blockquote>
+				<div id="dnd-npc"></div>	
+			</blockquote>
+		</div>	
 		<div>
 			<button id="food-btn" class="button is-dark">Random Food</button>
 			<button id="food-btn2" class="button is-dark">Random Food 2 Mixed Food</button>
@@ -84,10 +89,13 @@
 	<script src="food.js?v=8"></script>
 	<script src="world.js?v=20"></script>
 	<script src="civs.js?v=31"></script>
+	<script src="npc.js?v=4"></script>
 	
 	<script>
 	    $(function(){
-	    	
+	    	$("#dnd-npc-btn").click(function(){
+	    		$('#dnd-npc').html(createNPC());
+	    	})
 	    	$('#food-btn').click(function(){
 	    		made_food();
 	    	})
@@ -136,5 +144,14 @@
 	    })
 	    
 	</script>
+	<style>
+		.tag2{
+			word-wrap: break-word;
+			word-break: break-all;
+			white-space: normal !important;
+			display: inline-block !important;
+			font-size: 10px;
+		}
+	</style>
 </body>
 </html>
